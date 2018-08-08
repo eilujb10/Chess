@@ -1,4 +1,16 @@
 window.Chess = window.Chess || {
+  chess960: function() {
+    this.startPos = null;
+    this.endPos = null;
+    this.board = new this.Board960();
+    this.display = new this.Display(this.board);
+    this.bKing = this.board.grid[0][this.board.getKingColumn()]
+    this.wKing = this.board.grid[7][this.board.getKingColumn()];
+    //console.log(this.board.getKingColumn());
+    //console.log(wKing);
+    this.currentTurn = "white";
+  },
+
   newGame: function() {
     this.startPos = null;
     this.endPos = null;
